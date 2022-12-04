@@ -1,4 +1,4 @@
-def my_min(arr) #O(n^2)
+def my_min(arr) #O(n^2) time, O(N^2) space 
     least = arr.first
     arr.each_with_index do |ele, idx|
         arr.each_with_index do |ele2, idx2|
@@ -14,7 +14,7 @@ end
 # p my_min(arr)
 
 
-def my_min2(arr) #O(n)
+def my_min2(arr) #O(n) time, O(n) space
     least = arr.first # 2
     arr.each { |ele|  least = ele if ele < least   }
     least
@@ -24,7 +24,7 @@ end
 # p my_min2(arr)
 
 
-def largest_sum(arr) #O(n^2)
+def largest_sum(arr) #O(n^3) time, O(n^3) space
     subs = [] 
     sums = [] 
 
@@ -43,8 +43,17 @@ end
 # p largest_sum(list)
 
 
-def largest_sum(arr)
+def largest_sum(arr) #O(n) time, O(1) space
     largest = 0 
     current = 0 
-    
+
+    (0...arr.length).each do |idx|
+        current = 0 if current < 0
+        current += arr[idx]
+        largest = current if current > largest
+    end
+    largest 
 end
+
+list = [2, 3, -6, 7, -6, 7]
+p largest_sum(list)
