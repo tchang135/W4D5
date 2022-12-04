@@ -11,7 +11,7 @@ end
 # p bad_two_sum?(arr, 5)
 
 
-def okay_two_sum?(arr, target)
+def okay_two_sum?(arr, target) #O(n^2) time, O(1) space 
     arr = arr.sort 
     i = 0 
     j = arr.length - 1 
@@ -32,7 +32,7 @@ end
 # p okay_two_sum?(arr, 5)
 
 
-def two_sum?(arr, target)
+def two_sum?(arr, target) #O(n) time, O(1) space 
     hash = {}
 
     arr.each do |el|
