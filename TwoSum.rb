@@ -31,3 +31,18 @@ end
 # arr = [1, 2, 1, 1, 4]
 # p okay_two_sum?(arr, 5)
 
+
+def two_sum?(arr, target)
+    hash = {}
+
+    arr.each do |el|
+        diff = target - el  
+        return true if hash[diff] 
+        hash[el] = 'hi'
+    end
+    false 
+end
+
+arr = [1, 2, 1, 1, 2]
+p two_sum?(arr, 5)
+
